@@ -8,6 +8,11 @@ if [ ! -f /etc/ssh/ssh_host_rsa_key ]; then
     echo "$USER_SSH_ALLOWED" > /home/user/.ssh/authorized_keys
 fi
 
+if [ ! -f /has_run ]; then
+    cat /config/sshd_config >> /etc/ssh/sshd_config
+    touch /has_run
+fi
+
 echo "State of /home/user/.ssh/authorized_keys :"
 cat /home/user/.ssh/authorized_keys
 
