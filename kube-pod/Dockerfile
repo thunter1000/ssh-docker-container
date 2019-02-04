@@ -9,6 +9,4 @@ ADD docker-entry.sh /docker-entry.sh
 
 ADD config /config
 
-EXPOSE 22
-
 CMD ["sh", "/docker-entry.sh"]
